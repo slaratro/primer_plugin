@@ -10,8 +10,10 @@ public class MiKit extends JavaPlugin {
         getLogger().info("¡Plugin de Kits iniciado correctamente!");
 
         // Aquí registramos el comando "kit".
-        // Le decimos al servidor: "Cuando alguien escriba 'kit', usa la clase ComandoKit".
         this.getCommand("kit").setExecutor(new ComandoKit());
+        
+        // Registramos el evento de la GUI
+        getServer().getPluginManager().registerEvents(new EventoGUI(), this);
     }
 
     @Override
